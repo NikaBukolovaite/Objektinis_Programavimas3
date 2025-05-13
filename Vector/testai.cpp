@@ -72,3 +72,5 @@ TEST_CASE("Getters", "[getters]")
 	REQUIRE(s1.getPavarde() == "Jonaitis");
 	REQUIRE_FALSE(s1.getPazymiai().empty());
 }
+
+// v3.0 versijos testavimai
