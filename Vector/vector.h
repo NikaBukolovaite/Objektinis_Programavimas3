@@ -1,52 +1,41 @@
-
 #ifndef VECTOR_H
 #define VECTOR_H
 
-#include <iostream>			// srautams (naudojama testavimui)
-#include <memory>			// std::allocator, atminties valdymui
-#include <algorithm>		// std::move, std::copy, std::equal, lexicographical_compare
-#include <limits>			// max_size()
-#include <initializer_list> // initializer_list palaikymui
-#include <iterator>			// std::reverse_iterator
+#include <iostream>
+#include <memory>
+#include <algorithm>
+#include <limits>
+#include <initializer_list>
 
-// Vector klasės šablonas
-// Veikia su bet kokio tipo T
-
-/**
- * @brief Dinaminis masyvas, panašus į std::vector
- */
 template <typename T>
-class Vector
+class vector
 {
 public:
-	// Tipų alias'ai
-	using size_type = size_t;
-	using value_type = T;
-	using reference = T &;
-	using const_reference = const T &;
-	using iterator = T *;
-	using const_iterator = const T *;
-	using reverse_iterator = std::reverse_iterator<iterator>;
-	using const_reverse_iterator = std::reverse_iterator<const_iterator>;
+	typedef size_t size_type;
+	typedef T value_type;
+	typedef T &reference;
+	typedef const T &const_reference;
+	typedef T *iterator;
+	typedef const T *const_iterator;
+	typedef std::reverse_iterator<iterator> reverse_iterator;
+	typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
 
-	// Konstruktoriai ir destruktorius
-	Vector() { create(); }
-	explicit Vector(size_type n, const T &t = T{}) { create(n, t); }
-	Vector(const Vector &v) { create(v.begin(), v.end()); } // copy konstruktorius
-	Vector(Vector &&v) noexcept
-	{ // move konstruktorius
+	vector() { create(); }
+	explicit vector(size_type n, const T &t = T{}) { create(n, t); }
+	vector(const vector &v) { create(v.begin(), v.end()); }
+	template <class InputIterator>
+	vector(InputIterator first, InputIterator last) { create(first, last); }
+	vector(vector &&v) noexcept
+	{
 		dat = v.dat;
 		avail = v.avail;
 		limit = v.limit;
 		v.dat = v.avail = v.limit = nullptr;
 	}
-	template <class InputIterator>
-	Vector(InputIterator first, InputIterator last) { create(first, last); } // range
-	Vector(std::initializer_list<T> il) { create(il.begin(), il.end()); }
-	~Vector() { uncreate(); } // destruktorius
+	vector(std::initializer_list<T> il) { create(il.begin(), il.end()); }
+	~vector() { uncreate(); }
 
-	// Priskyrimo operatoriai
-	Vector &operator=(const Vector &other)
+	vector &operator=(const vector &other)
 	{
 		if (this != &other)
 		{
@@ -55,65 +44,70 @@ public:
 		}
 		return *this;
 	}
-	Vector &operator=(Vector &&other) noexcept
+
+	vector &operator=(vector &&other) noexcept
 	{
 		if (this != &other)
 		{
 			uncreate();
-			dat = other.dat;
-			avail = other.avail;
-			limit = other.limit;
-			other.dat = other.avail = other.limit = nullptr;
+			std::swap(dat, other.dat);
+			std::swap(avail, other.avail);
+			std::swap(limit, other.limit);
 		}
 		return *this;
 	}
-
-	// Main funkcijos
-
-	// Prieiga prie elementų
-	reference operator[](size_type i) { return dat[i]; }
-	const_reference operator[](size_type i) const { return dat[i]; }
-
-	reference at(size_type i)
-	{
-		if (i >= size())
-			throw std::out_of_range("at(): indeksas viršijo ribas");
-		return dat[i];
-	}
-	const_reference at(size_type i) const
-	{
-		if (i >= size())
-			throw std::out_of_range("at(): indeksas viršijo ribas");
-		return dat[i];
-	}
-
-	reference front() { return *dat; }
-	const_reference front() const { return *dat; }
-	reference back() { return *(avail - 1); }
-	const_reference back() const { return *(avail - 1); }
-	value_type *data() noexcept { return dat; }
-	const value_type *data() const noexcept { return dat; }
 
 	iterator begin() { return dat; }
 	const_iterator begin() const { return dat; }
 	iterator end() { return avail; }
 	const_iterator end() const { return avail; }
-
 	const_iterator cbegin() const { return dat; }
 	const_iterator cend() const { return avail; }
 	reverse_iterator rbegin() { return reverse_iterator(avail); }
 	reverse_iterator rend() { return reverse_iterator(dat); }
-	const_reverse_iterator rbegin() const { return const_reverse_iterator(avail); }
-	const_reverse_iterator rend() const { return const_reverse_iterator(dat); }
 	const_reverse_iterator crbegin() const { return const_reverse_iterator(avail); }
 	const_reverse_iterator crend() const { return const_reverse_iterator(dat); }
 
-	// Vietos valdymas
 	size_type size() const { return avail - dat; }
-	size_type capacity() const { return limit - dat; }
 	size_type max_size() const { return std::numeric_limits<size_type>::max(); }
-	bool empty() const noexcept { return size() == 0; }
+	void resize(size_type sz)
+	{
+		if (sz < size())
+		{
+			iterator it = dat + sz;
+			while (it != avail)
+				alloc.destroy(it++);
+			avail = dat + sz;
+		}
+		else if (sz > capacity())
+		{
+			grow(sz);
+			std::uninitialized_fill(avail, dat + sz, value_type());
+			avail = dat + sz;
+		}
+		else if (sz > size())
+		{
+			std::uninitialized_fill(avail, dat + sz, value_type());
+			avail = dat + sz;
+		}
+	}
 
+	void resize(size_type sz, const value_type &value)
+	{
+		if (sz > capacity())
+			grow(sz);
+		if (sz > size())
+		{
+			insert(end(), sz - size(), value);
+		}
+		else if (sz < size())
+		{
+			avail = dat + sz;
+		}
+	}
+
+	size_type capacity() const { return limit - dat; }
+	bool empty() const noexcept { return size() == 0; }
 	void reserve(size_type n)
 	{
 		if (n > capacity())
@@ -121,211 +115,169 @@ public:
 	}
 	void shrink_to_fit()
 	{
-		if (size() < capacity())
-		{
-			size_type sz = size();
-			iterator new_data = alloc.allocate(sz);
-			std::uninitialized_move(dat, avail, new_data);
-			uncreate();
-			dat = new_data;
-			avail = dat + sz;
-			limit = dat + sz;
-		}
-	}
-	void resize(size_type sz, const T &value = T{})
-	{
-		if (sz < size())
-		{
-			while (avail != dat + sz)
-				alloc.destroy(--avail);
-		}
-		else if (sz > capacity())
-		{
-			grow(sz);
-		}
-		while (size() < sz)
-			push_back(value);
+		if (limit > avail)
+			limit = avail;
 	}
 
-	void clear() noexcept
+	T &operator[](size_type n) { return dat[n]; }
+	const T &operator[](size_type n) const { return dat[n]; }
+	reference at(size_type n)
 	{
-		uncreate();
-		create();
+		if (n >= size())
+			throw std::out_of_range("Index out of range");
+		return dat[n];
 	}
-
-	void push_back(const T &val)
+	const_reference at(size_type n) const
 	{
-		if (avail == limit)
-			grow();
-		alloc.construct(avail++, val);
+		if (n >= size())
+			throw std::out_of_range("Index out of range");
+		return dat[n];
 	}
-	void push_back(T &&val)
-	{
-		if (avail == limit)
-			grow();
-		alloc.construct(avail++, std::move(val));
-	}
-
-	template <class... Args>
-	reference emplace_back(Args &&...args)
-	{
-		if (avail == limit)
-			grow();
-		alloc.construct(avail, std::forward<Args>(args)...);
-		return *avail++;
-	}
-
-	template <class... Args>
-	iterator emplace(iterator pos, Args &&...args)
-	{
-		size_type index = pos - dat;
-		if (avail == limit)
-			grow();
-		pos = dat + index;
-		std::move_backward(pos, avail, avail + 1);
-		alloc.construct(pos, std::forward<Args>(args)...);
-		++avail;
-		return pos;
-	}
-
-	iterator insert(iterator pos, size_type n, const T &val)
-	{
-		size_type index = pos - dat;
-		if (avail + n > limit)
-			grow(size() + n);
-		pos = dat + index;
-		std::move_backward(pos, avail, avail + n);
-		std::uninitialized_fill(pos, pos + n, val);
-		avail += n;
-		return pos;
-	}
+	reference front() { return dat[0]; }
+	const_reference front() const { return dat[0]; }
+	reference back() { return dat[size() - 1]; }
+	const_reference back() const { return dat[size() - 1]; }
+	value_type *data() noexcept { return dat; }
+	const value_type *data() const noexcept { return dat; }
 
 	template <class InputIterator>
-	iterator insert(iterator pos, InputIterator first, InputIterator last)
+	void assign(InputIterator first, InputIterator last)
 	{
-		size_type index = pos - dat;
-		size_type n = std::distance(first, last);
-		if (avail + n > limit)
-			grow(size() + n);
-		pos = dat + index;
-		std::move_backward(pos, avail, avail + n);
-		std::uninitialized_copy(first, last, pos);
-		avail += n;
-		return pos;
+		uncreate();
+		create(first, last);
+	}
+	void assign(size_type n, const value_type &val)
+	{
+		uncreate();
+		create(n, val);
+	}
+	void assign(std::initializer_list<value_type> il)
+	{
+		uncreate();
+		create(il.begin(), il.end());
 	}
 
-	iterator insert(iterator pos, std::initializer_list<T> il)
+	void push_back(const value_type &t)
 	{
-		return insert(pos, il.begin(), il.end());
+		if (avail == limit)
+			grow();
+		unchecked_append(t);
+	}
+	void push_back(value_type &&val)
+	{
+		if (avail == limit)
+			grow();
+		unchecked_append(std::move(val));
 	}
 
 	void pop_back()
 	{
-		if (!empty())
+		if (avail != dat)
 			alloc.destroy(--avail);
 	}
 
-	iterator erase(iterator pos)
+	iterator insert(iterator pos, const T &value)
 	{
-		std::move(pos + 1, avail, pos);
+		size_type index = pos - begin();
+		size_type numNewElements = 1;
+		if (size() + numNewElements > capacity())
+			reserve((size() + numNewElements) * 2);
+		std::move_backward(dat + index, avail, avail + numNewElements);
+		dat[index] = value;
+		avail += numNewElements;
+		return dat + index;
+	}
+
+	iterator erase(iterator position)
+	{
+		if (position < dat || position > avail)
+			throw std::out_of_range("Index out of range");
+		std::move(position + 1, avail, position);
 		alloc.destroy(--avail);
-		return pos;
+		return position;
 	}
 
 	iterator erase(iterator first, iterator last)
 	{
-		iterator new_end = std::move(last, avail, first);
-		while (avail != new_end)
-			alloc.destroy(--avail);
-		return first;
+		iterator new_available = std::uninitialized_copy(last, avail, first);
+		iterator it = avail;
+		while (it != new_available)
+			alloc.destroy(--it);
+		avail = new_available;
+		return last;
 	}
 
-	void swap(Vector &x)
+	void swap(vector &x)
 	{
 		std::swap(dat, x.dat);
 		std::swap(avail, x.avail);
 		std::swap(limit, x.limit);
 	}
 
-	void assign(size_type n, const T &val)
-	{
-		clear();
-		for (size_type i = 0; i < n; ++i)
-			push_back(val);
-	}
+	void clear() noexcept { uncreate(); }
 
-	template <class InputIterator>
-	void assign(InputIterator first, InputIterator last)
-	{
-		clear();
-		for (; first != last; ++first)
-			push_back(*first);
-	}
-
-	void assign(std::initializer_list<T> il)
-	{
-		assign(il.begin(), il.end());
-	}
-
-	std::allocator<T> get_allocator() const { return alloc; }
-
-	// Lyginimo operatoriai
-	bool operator==(const Vector &other) const
+	bool operator==(const vector<T> &other) const
 	{
 		return size() == other.size() && std::equal(begin(), end(), other.begin());
 	}
-	bool operator!=(const Vector &other) const { return !(*this == other); }
-	bool operator<(const Vector &other) const
+	bool operator!=(const vector<T> &other) const { return !(*this == other); }
+	bool operator<(const vector<T> &other) const
 	{
 		return std::lexicographical_compare(begin(), end(), other.begin(), other.end());
 	}
-	bool operator>(const Vector &other) const { return other < *this; }
-	bool operator<=(const Vector &other) const { return !(other < *this); }
-	bool operator>=(const Vector &other) const { return !(*this < other); }
+	bool operator<=(const vector<T> &other) const { return !(other < *this); }
+	bool operator>(const vector<T> &other) const
+	{
+		return std::lexicographical_compare(other.begin(), other.end(), begin(), end());
+	}
+	bool operator>=(const vector<T> &other) const { return !(*this < other); }
 
 private:
-	iterator dat = nullptr;	  // pradžia
-	iterator avail = nullptr; // pabaiga (naudojami)
-	iterator limit = nullptr; // pabaiga (alokacija)
-	std::allocator<T> alloc;  // atminties alokatorius
+	iterator dat = nullptr;
+	iterator avail = nullptr;
+	iterator limit = nullptr;
+	std::allocator<T> alloc;
 
 	void create() { dat = avail = limit = nullptr; }
-
 	void create(size_type n, const T &val)
 	{
 		dat = alloc.allocate(n);
 		avail = limit = dat + n;
-		std::uninitialized_fill(dat, avail, val);
+		std::uninitialized_fill(dat, limit, val);
 	}
-
-	template <class InputIterator>
-	void create(InputIterator first, InputIterator last)
+	void create(const_iterator i, const_iterator j)
 	{
-		size_type n = std::distance(first, last);
-		dat = alloc.allocate(n);
-		avail = limit = std::uninitialized_copy(first, last, dat);
+		dat = alloc.allocate(j - i);
+		limit = avail = std::uninitialized_copy(i, j, dat);
 	}
-
 	void uncreate()
 	{
 		if (dat)
 		{
-			while (avail != dat)
-				alloc.destroy(--avail);
+			iterator it = avail;
+			while (it != dat)
+				alloc.destroy(--it);
 			alloc.deallocate(dat, limit - dat);
 		}
-		dat = avail = limit = nullptr;
+		dat = limit = avail = nullptr;
 	}
-
-	void grow(size_type new_cap = 0)
+	void grow(size_type new_capacity = 1)
 	{
-		size_type new_size = std::max(new_cap, std::max(2 * capacity(), size_type(1)));
+		size_type new_size = std::max(new_capacity, 2 * capacity());
 		iterator new_data = alloc.allocate(new_size);
-		iterator new_avail = std::uninitialized_move(dat, avail, new_data);
+		iterator new_avail = std::uninitialized_copy(dat, avail, new_data);
 		uncreate();
 		dat = new_data;
 		avail = new_avail;
 		limit = dat + new_size;
+	}
+	void unchecked_append(const T &val)
+	{
+		alloc.construct(avail++, val);
+	}
+	void unchecked_append(T &&val)
+	{
+		alloc.construct(avail++, std::move(val));
 	}
 };
 

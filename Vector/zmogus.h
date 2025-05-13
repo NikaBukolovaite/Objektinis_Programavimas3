@@ -1,6 +1,7 @@
 #ifndef ZMOGUS_H
 #define ZMOGUS_H
 #include "../santrauka.h"
+#include "vector.h"
 
 class Zmogus
 {

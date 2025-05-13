@@ -2,6 +2,7 @@
 #define STUDENTAS_H
 #include "../santrauka.h"
 #include "zmogus.h"
+#include "vector.h"
 
 class Studentas : public Zmogus
 {

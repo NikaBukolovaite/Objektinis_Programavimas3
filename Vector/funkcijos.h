@@ -2,6 +2,7 @@
 #define FUNCTIONS_H
 #include "../santrauka.h"
 #include "studentas.h"
+#include "vector.h"
 
 const string aplankalo_pavadinimas = "NuskaitymoFailai";
 extern vector<std::chrono::duration<double>> testuLaikai;

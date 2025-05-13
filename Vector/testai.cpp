@@ -2,6 +2,7 @@
 
 #include "catch.hpp"
 
+#include "vector.h"
 #include "studentas.h"
 #include "../santrauka.h"
 
