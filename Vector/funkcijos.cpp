@@ -782,7 +782,7 @@ int papildomas_rusiavimas()
 
 int pagal_ka_rusiuoti_studentus_i_failus(vector<Studentas> &studentai, int skaiciavimo_budas)
 {
-	std::vector<Studentas> vargsiukai;
+	vector<Studentas> vargsiukai;
 	int rusiavimo_budas = 0;
 
 	if (skaiciavimo_budas == 3)
@@ -813,7 +813,7 @@ int pagal_ka_rusiuoti_studentus_i_failus(vector<Studentas> &studentai, int skaic
 
 void studentu_rusiavimas_3strategija(vector<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti, int rusiavimo_budas)
 {
-	std::vector<Studentas> kietekai, vargsiukai;
+	vector<Studentas> kietekai, vargsiukai;
 
 	auto start = std::chrono::high_resolution_clock::now();
 	if (skaiciavimo_budas == 1)

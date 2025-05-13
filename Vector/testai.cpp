@@ -30,7 +30,7 @@ TEST_CASE("Copy constructor", "[copy constructor]")
 	REQUIRE(studentas2.getVardas() == "Jonas");
 	REQUIRE(studentas2.getPavarde() == "Jonaitis");
 	REQUIRE(studentas2.getEgzaminoPazymys() == 7);
-	REQUIRE(studentas2.getPazymiai() == std::vector<int>{8, 9, 10});
+	REQUIRE(studentas2.getPazymiai() == vector<int>{8, 9, 10});
 }
 
 TEST_CASE("Copy assignment", "[copy assignment]")
@@ -40,7 +40,7 @@ TEST_CASE("Copy assignment", "[copy assignment]")
 	REQUIRE(studentas2.getVardas() == "Jonas");
 	REQUIRE(studentas2.getPavarde() == "Jonaitis");
 	REQUIRE(studentas2.getEgzaminoPazymys() == 7);
-	REQUIRE(studentas2.getPazymiai() == std::vector<int>{8, 9, 10});
+	REQUIRE(studentas2.getPazymiai() == vector<int>{8, 9, 10});
 }
 
 TEST_CASE("Move constructor", "[move constructor]")
@@ -50,7 +50,7 @@ TEST_CASE("Move constructor", "[move constructor]")
 	REQUIRE(studentas2.getVardas() == "Jonas");
 	REQUIRE(studentas2.getPavarde() == "Jonaitis");
 	REQUIRE(studentas2.getEgzaminoPazymys() == 7);
-	REQUIRE(studentas2.getPazymiai() == std::vector<int>{8, 9, 10});
+	REQUIRE(studentas2.getPazymiai() == vector<int>{8, 9, 10});
 	REQUIRE_FALSE(studentas1 == studentas2);
 }
 
@@ -61,7 +61,7 @@ TEST_CASE("Move assignment", "[move assignment]")
 	REQUIRE(studentas2.getVardas() == "Jonas");
 	REQUIRE(studentas2.getPavarde() == "Jonaitis");
 	REQUIRE(studentas2.getEgzaminoPazymys() == 7);
-	REQUIRE(studentas2.getPazymiai() == std::vector<int>{8, 9, 10});
+	REQUIRE(studentas2.getPazymiai() == vector<int>{8, 9, 10});
 	REQUIRE_FALSE(studentas1 == studentas2);
 }
 

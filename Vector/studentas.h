@@ -7,7 +7,7 @@
 class Studentas : public Zmogus
 {
 private:
-	std::vector<int> pazymiai_;
+	vector<int> pazymiai_;
 	int egzamino_pazymys_ = 0;
 	double galutinis_pazymys_vid_ = 0.0;
 	double galutinis_pazymys_med_ = 0.0;
@@ -21,7 +21,7 @@ public:
 		  galutinis_pazymys_vid_{0.0},
 		  galutinis_pazymys_med_{0.0} {}
 
-	Studentas(std::string vardas, std::string pavarde, std::vector<int> pazymiai, int egzamino_pazymys)
+	Studentas(std::string vardas, std::string pavarde, vector<int> pazymiai, int egzamino_pazymys)
 		: Zmogus(vardas, pavarde),
 		  pazymiai_{pazymiai},
 		  egzamino_pazymys_{egzamino_pazymys} {}
@@ -90,12 +90,12 @@ public:
 	void setPavarde(const std::string &pavarde) override { pavarde_ = pavarde; }
 	std::string getPavarde() const override { return pavarde_; }
 
-	std::vector<int> getPazymiai() const { return pazymiai_; }
+	vector<int> getPazymiai() const { return pazymiai_; }
 	int getEgzaminoPazymys() const { return egzamino_pazymys_; }
 	double getGalutinisPazymysVid() const { return galutinis_pazymys_vid_; }
 	double getGalutinisPazymysMed() const { return galutinis_pazymys_med_; }
 
-	void setPazymiai(std::vector<int> pazymiai) { pazymiai_ = pazymiai; }
+	void setPazymiai(vector<int> pazymiai) { pazymiai_ = pazymiai; }
 	void setEgzaminoPazymys(int egzamino_pazymys) { egzamino_pazymys_ = egzamino_pazymys; }
 	void addPazymys(int pazymys) { pazymiai_.push_back(pazymys); }
 	void removeLastPazymys(int pazymys) { pazymiai_.pop_back(); }
