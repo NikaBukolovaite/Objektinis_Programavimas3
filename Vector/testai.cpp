@@ -74,3 +74,19 @@ TEST_CASE("Getters", "[getters]")
 }
 
 // v3.0 versijos testavimai
+
+TEST_CASE("Vector konstruktorius", "[vector]")
+{
+	vector<int> vektorius;
+	REQUIRE(vektorius.size() == 0);
+	REQUIRE(vektorius.capacity() == 0);
+	REQUIRE(vektorius.empty());
+}
+
+TEST_CASE("Fill konstrutorius", "[vector]")
+{
+	vector<int> vektorius1(5, 42);
+	REQUIRE(vektorius1.size() == 5);
+	for (int i = 0; i < 5; ++i)
+		REQUIRE(vektorius1[i] == 42);
+}
