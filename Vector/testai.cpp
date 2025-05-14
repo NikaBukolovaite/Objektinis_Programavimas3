@@ -90,3 +90,30 @@ TEST_CASE("Fill konstrutorius", "[vector]")
 	for (int i = 0; i < 5; ++i)
 		REQUIRE(vektorius1[i] == 42);
 }
+
+TEST_CASE("Copy konstruktorius", "[vector]")
+{
+	vector<int> original(3, 7);
+	vector<int> copy(original);
+	REQUIRE(copy.size() == original.size());
+	for (int i = 0; i < copy.size(); ++i)
+		REQUIRE(copy[i] == 7);
+}
+
+TEST_CASE("Move konstruktorius", "[vector]")
+{
+	vector<int> laikinas(3, 8);
+	vector<int> moved(std::move(laikinas));
+	REQUIRE(moved.size() == 3);
+	for (int i = 0; i < 3; ++i)
+		REQUIRE(moved[i] == 8);
+}
+
+TEST_CASE("Initializer list konstruktorius", "[vector]")
+{
+	vector<int> vektorius2{1, 2, 3};
+	REQUIRE(vektorius2.size() == 3);
+	REQUIRE(vektorius2[0] == 1);
+	REQUIRE(vektorius2[1] == 2);
+	REQUIRE(vektorius2[2] == 3);
+}
