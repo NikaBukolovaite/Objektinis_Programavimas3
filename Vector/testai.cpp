@@ -132,40 +132,24 @@ TEST_CASE("Assigment operatorius", "[vector]")
 	REQUIRE(v3.size() == 4);
 }
 
-// perdaryt
-
-TEST_CASE("Assignment Operators", "[vector]")
+TEST_CASE("Prieiga prie elemento", "[vector]")
 {
-	vector<int> v1(4, 10);
-	vector<int> v2;
-	v2 = v1;
-	REQUIRE(v2.size() == 4);
-	for (int i = 0; i < 4; ++i)
-		REQUIRE(v2[i] == 10);
-
-	vector<int> v3(2, 5);
-	v3 = std::move(v2);
-	REQUIRE(v3.size() == 4);
+	vector<int> vektorius3{5, 6, 7};
+	REQUIRE(vektorius3[0] == 5);
+	REQUIRE(vektorius3.at(1) == 6);
+	REQUIRE_THROWS_AS(vektorius3.at(10), std::out_of_range);
+	REQUIRE(vektorius3.front() == 5);
+	REQUIRE(vektorius3.back() == 7);
 }
 
-TEST_CASE("Element Access", "[vector]")
-{
-	vector<int> v{5, 6, 7};
-	REQUIRE(v[0] == 5);
-	REQUIRE(v.at(1) == 6);
-	REQUIRE_THROWS_AS(v.at(10), std::out_of_range);
-	REQUIRE(v.front() == 5);
-	REQUIRE(v.back() == 7);
-}
-
-TEST_CASE("Data Pointer", "[vector]")
+TEST_CASE("Data Pointeris", "[vector]")
 {
 	vector<int> v{1, 2, 3};
 	int *ptr = v.data();
 	REQUIRE(*ptr == 1);
 }
 
-TEST_CASE("Iterators", "[vector]")
+TEST_CASE("Iteratoriai", "[vector]")
 {
 	vector<int> v{1, 2, 3};
 	REQUIRE(*v.begin() == 1);
@@ -174,107 +158,107 @@ TEST_CASE("Iterators", "[vector]")
 	REQUIRE(*(v.cend() - 1) == 3);
 }
 
-TEST_CASE("Reverse Iterators", "[vector]")
+TEST_CASE("Reverse iteratoriai", "[vector]")
 {
-	vector<int> v{1, 2, 3};
-	REQUIRE(*v.rbegin() == 3);
-	REQUIRE(*(v.rend() - 1) == 1);
-	REQUIRE(*v.crbegin() == 3);
-	REQUIRE(*(v.crend() - 1) == 1);
+	vector<int> vektorius{1, 2, 3};
+	REQUIRE(*vektorius.rbegin() == 3);
+	REQUIRE(*(vektorius.rend() - 1) == 1);
+	REQUIRE(*vektorius.crbegin() == 3);
+	REQUIRE(*(vektorius.crend() - 1) == 1);
 }
 
-TEST_CASE("Size, Capacity, Empty", "[vector]")
+TEST_CASE("Size, capacity, empty", "[vector]")
 {
-	vector<int> v;
-	REQUIRE(v.size() == 0);
-	REQUIRE(v.capacity() == 0);
-	REQUIRE(v.empty());
-	v.reserve(10);
-	REQUIRE(v.capacity() >= 10);
+	vector<int> vektorius;
+	REQUIRE(vektorius.size() == 0);
+	REQUIRE(vektorius.capacity() == 0);
+	REQUIRE(vektorius.empty());
+	vektorius.reserve(10);
+	REQUIRE(vektorius.capacity() >= 10);
 }
 
 TEST_CASE("Resize", "[vector]")
 {
-	vector<int> v(5, 1);
-	v.resize(10);
-	REQUIRE(v.size() == 10);
-	v.resize(3);
-	REQUIRE(v.size() == 3);
-	v.resize(6, 7);
-	REQUIRE(v[3] == 7);
-	REQUIRE(v[5] == 7);
+	vector<int> vektorius(5, 1);
+	vektorius.resize(10);
+	REQUIRE(vektorius.size() == 10);
+	vektorius.resize(3);
+	REQUIRE(vektorius.size() == 3);
+	vektorius.resize(6, 7);
+	REQUIRE(vektorius[3] == 7);
+	REQUIRE(vektorius[5] == 7);
 }
 
 TEST_CASE("Shrink to Fit", "[vector]")
 {
-	vector<int> v(100, 1);
-	v.resize(50);
-	v.shrink_to_fit();
-	REQUIRE(v.capacity() == v.size());
+	vector<int> vektorius(100, 1);
+	vektorius.resize(50);
+	vektorius.shrink_to_fit();
+	REQUIRE(vektorius.capacity() == vektorius.size());
 }
 
-TEST_CASE("Push and Pop", "[vector]")
+TEST_CASE("Push ir Pop", "[vector]")
 {
-	vector<int> v;
-	v.push_back(10);
-	v.push_back(20);
-	REQUIRE(v.back() == 20);
-	v.pop_back();
-	REQUIRE(v.back() == 10);
+	vector<int> vektorius;
+	vektorius.push_back(10);
+	vektorius.push_back(20);
+	REQUIRE(vektorius.back() == 20);
+	vektorius.pop_back();
+	REQUIRE(vektorius.back() == 10);
 }
 
-TEST_CASE("Insert and Erase", "[vector]")
+TEST_CASE("Insertas ir Erase", "[vector]")
 {
-	vector<int> v{1, 2, 4};
-	v.insert(v.begin() + 2, 3);
-	REQUIRE(v[2] == 3);
-	v.erase(v.begin() + 2);
-	REQUIRE(v[2] == 4);
+	vector<int> vektorius{1, 2, 4};
+	vektorius.insert(vektorius.begin() + 2, 3);
+	REQUIRE(vektorius[2] == 3);
+	vektorius.erase(vektorius.begin() + 2);
+	REQUIRE(vektorius[2] == 4);
 }
 
-TEST_CASE("Insert Multiple Elements", "[vector]")
+TEST_CASE("Ideti daug elementu", "[vector]")
 {
-	vector<int> v{1, 4};
-	v.insert(v.begin() + 1, 2);
-	v.insert(v.begin() + 2, 3);
-	REQUIRE(v[1] == 2);
-	REQUIRE(v[2] == 3);
-	REQUIRE(v[3] == 4);
+	vector<int> vektorius{1, 4};
+	vektorius.insert(vektorius.begin() + 1, 2);
+	vektorius.insert(vektorius.begin() + 2, 3);
+	REQUIRE(vektorius[1] == 2);
+	REQUIRE(vektorius[2] == 3);
+	REQUIRE(vektorius[3] == 4);
 }
 
 TEST_CASE("Erase Range", "[vector]")
 {
-	vector<int> v{1, 2, 3, 4, 5};
-	v.erase(v.begin() + 1, v.begin() + 4);
-	REQUIRE(v.size() == 2);
-	REQUIRE(v[0] == 1);
-	REQUIRE(v[1] == 5);
+	vector<int> vektorius{1, 2, 3, 4, 5};
+	vektorius.erase(vektorius.begin() + 1, vektorius.begin() + 4);
+	REQUIRE(vektorius.size() == 2);
+	REQUIRE(vektorius[0] == 1);
+	REQUIRE(vektorius[1] == 5);
 }
 
 TEST_CASE("Assign with Range and List", "[vector]")
 {
 	vector<int> source{7, 8, 9};
-	vector<int> v;
-	v.assign(source.begin(), source.end());
-	REQUIRE(v.size() == 3);
-	REQUIRE(v[0] == 7);
+	vector<int> vektorius;
+	vektorius.assign(source.begin(), source.end());
+	REQUIRE(vektorius.size() == 3);
+	REQUIRE(vektorius[0] == 7);
 
-	v.assign({1, 2, 3});
-	REQUIRE(v.size() == 3);
-	REQUIRE(v[2] == 3);
+	vektorius.assign({1, 2, 3});
+	REQUIRE(vektorius.size() == 3);
+	REQUIRE(vektorius[2] == 3);
 }
 
-TEST_CASE("Clear and Assign", "[vector]")
+TEST_CASE("Clear ir Assign", "[vector]")
 {
-	vector<int> v{1, 2, 3};
-	v.clear();
-	REQUIRE(v.empty());
-	v.assign(5, 9);
+	vector<int> vektorius{1, 2, 3};
+	vektorius.clear();
+	REQUIRE(vektorius.empty());
+	vektorius.assign(5, 9);
 	for (int i = 0; i < 5; ++i)
-		REQUIRE(v[i] == 9);
+		REQUIRE(vektorius[i] == 9);
 }
 
-TEST_CASE("Relational Operators", "[vector]")
+TEST_CASE("Operatoriai", "[vector]")
 {
 	vector<int> a{1, 2, 3};
 	vector<int> b{1, 2, 3};

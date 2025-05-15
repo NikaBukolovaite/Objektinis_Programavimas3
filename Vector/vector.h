@@ -188,6 +188,19 @@ public:
 		return dat + index;
 	}
 
+	iterator insert(iterator pos, size_type count, const T &value)
+	{
+		size_type index = pos - begin();
+		if (size() + count > capacity())
+			reserve((size() + count) * 2);
+
+		pos = dat + index; // po galimos grow(), kad rodyklė būtų teisinga
+		std::move_backward(pos, avail, avail + count);
+		std::uninitialized_fill(pos, pos + count, value);
+		avail += count;
+		return pos;
+	}
+
 	iterator erase(iterator position)
 	{
 		if (position < dat || position > avail)
