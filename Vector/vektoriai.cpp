@@ -4,6 +4,7 @@
 
 int main()
 {
+	int choise;
 	vector<Studentas> studentai;
 	vector<string> sugeneruoti_failai;
 	int pasirinkimas = 0;
@@ -19,6 +20,10 @@ int main()
 		{
 			pabaiga(pasirinkimas, generuoti, pap_rusiavimas, kaip_surusiuoti);
 			spartosTestas();
+			std::cout << "Paspausk Enter, kad uždaryti programą...";
+			std::cin.ignore();
+			std::cin.get();
+
 			break;
 		}
 		else
@@ -122,4 +127,5 @@ int main()
 			}
 		}
 	}
+}
 }

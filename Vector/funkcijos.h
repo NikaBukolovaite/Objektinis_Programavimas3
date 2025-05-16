@@ -47,5 +47,6 @@ void rusiavimoIf(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciav
 void terminalas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
 void failas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
 void spartosTestas();
+// int ar_paleisti_programa()
 
 #endif

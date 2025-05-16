@@ -1019,3 +1019,11 @@ void spartosTestas()
 		cout << "Vector[" << size << "] - laikas: " << trukme.count() << " s, perskirstymai: " << perskirstymai << endl;
 	}
 }
+
+// int ar_paleisti_programa()
+// {
+// 	int choise;
+// 	cout << "Ar paleisti programa?";
+// 	cin >> choise;
+// 	return choise;
+// }
