@@ -1,4 +1,5 @@
 #include "funkcijos.h"
+#include "vector.h"
 vector<std::chrono::duration<double>> testuLaikai;
 vector<std::chrono::duration<double>> kurimoLaikai;
 vector<std::chrono::duration<double>> rusiavimoLaikai;
@@ -972,4 +973,49 @@ void failas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_b
 	ofstream failas("rezultatai.txt");
 	output(failas, studentai, skaiciavimo_budas, 2);
 	failas.close();
+}
+
+void spartosTestas()
+{
+	unsigned int sizes[] = {10000, 100000, 1000000, 10000000, 100000000};
+
+	cout << "=== std::vector spartos testas ===" << endl;
+	for (unsigned int size : sizes)
+	{
+		int perskirstymai = 0;
+		vector<int> v1;
+		auto start = high_resolution_clock::now();
+
+		for (unsigned int i = 0; i < size; ++i)
+		{
+			v1.push_back(i);
+			if (v1.capacity() == v1.size())
+				++perskirstymai;
+		}
+
+		auto end = high_resolution_clock::now();
+		duration<double> trukme = end - start;
+
+		cout << "std::vector[" << size << "] - laikas: " << trukme.count() << " s, perskirstymai: " << perskirstymai << endl;
+	}
+
+	cout << "\n=== Tavo Vector spartos testas ===" << endl;
+	for (unsigned int size : sizes)
+	{
+		int perskirstymai = 0;
+		Vector<int> v2;
+		auto start = high_resolution_clock::now();
+
+		for (unsigned int i = 0; i < size; ++i)
+		{
+			v2.push_back(i);
+			if (v2.capacity() == v2.size())
+				++perskirstymai;
+		}
+
+		auto end = high_resolution_clock::now();
+		duration<double> trukme = end - start;
+
+		cout << "Vector[" << size << "] - laikas: " << trukme.count() << " s, perskirstymai: " << perskirstymai << endl;
+	}
 }
