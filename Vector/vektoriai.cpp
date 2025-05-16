@@ -18,13 +18,8 @@ int main()
 		pasirinkimas = Meniu();
 		if (pasirinkimas == 5)
 		{
-			pabaiga(pasirinkimas, generuoti, pap_rusiavimas, kaip_surusiuoti);
 			spartosTestas();
-			std::cout << "Paspausk Enter, kad uždaryti programą...";
-			std::cin.ignore();
-			std::cin.get();
-
-			break;
+			pabaiga(pasirinkimas, generuoti, pap_rusiavimas, kaip_surusiuoti);
 		}
 		else
 		{
@@ -127,5 +122,4 @@ int main()
 			}
 		}
 	}
-}
 }
