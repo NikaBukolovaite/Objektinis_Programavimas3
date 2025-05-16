@@ -115,6 +115,24 @@ Padaryta dokumentacija su Doxygen (html ir latex.pdf) ir realizuoti Unit testai 
 Visi testai praejo sekmingai.
 ![imagine alt](https://github.com/NikaBukolovaite/Objektinis_Programavimas2/blob/430e4f3d45d5afef750e2593f5c82c40b9666eb7/Nuotraukos/Testai/Screenshot%202025-05-09%20212011.png)
 
+# v3.0 versija
+
+Sukurta nuosava vektoriaus klase, atlikti talpos ir greicio testati, sukurtas setup failas.
+
+# v3.0 versijos testavimas
+
+## Laiko ir talpos testavimai
+
+### Pastaba: laikas matuojamas sekundemis.
+
+|  Kiekis   | std::vector sparta | Mano vector sparta | std::vector perskirstymai | Mano vector perskirstymai |
+| :-------: | :----------------: | :----------------: | :-----------------------: | :-----------------------: |
+|   10000   |      0.000414      |      0.000483      |            14             |            14             |
+|  100000   |      0.002356      |      0.002296      |            17             |            17             |
+|  1000000  |      0.026129      |      0.021990      |            20             |            20             |
+| 10000000  |      0.249020      |      0.236822      |            24             |            24             |
+| 100000000 |      2.473831      |      2.340248      |            27             |            27             |
+
 # Rule of Five realizacija
 
 | Metodas                                  | Paskirtis                         |
