@@ -46,5 +46,6 @@ void output(ostream &out, vector<Studentas> studentai, int skaiciavimo_budas, in
 void rusiavimoIf(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
 void terminalas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
 void failas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
+void spartosTestas();
 
 #endif

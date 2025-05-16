@@ -18,7 +18,7 @@ int main()
 		if (pasirinkimas == 5)
 		{
 			pabaiga(pasirinkimas, generuoti, pap_rusiavimas, kaip_surusiuoti);
-
+			spartosTestas();
 			break;
 		}
 		else

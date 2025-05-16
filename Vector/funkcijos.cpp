@@ -1003,7 +1003,7 @@ void spartosTestas()
 	for (unsigned int size : sizes)
 	{
 		int perskirstymai = 0;
-		Vector<int> v2;
+		vector<int> v2;
 		auto start = high_resolution_clock::now();
 
 		for (unsigned int i = 0; i < size; ++i)
