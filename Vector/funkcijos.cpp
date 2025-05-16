@@ -418,7 +418,7 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui, int k
 	{
 		cout << "Programa baigta." << endl;
 	}
-	cout << "Paspausk Enter, kad uzdaryti programa..." << endl;
+	cout << "Paspausk Enter, kad uzdaryti programa." << endl;
 	std::cin.ignore();
 	std::cin.get();
 }
