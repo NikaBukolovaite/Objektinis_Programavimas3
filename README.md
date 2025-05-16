@@ -133,6 +133,16 @@ Sukurta nuosava vektoriaus klase, atlikti talpos ir greicio testati, sukurtas se
 | 10000000  |      0.249020      |      0.236822      |            24             |            24             |
 | 100000000 |      2.473831      |      2.340248      |            27             |            27             |
 
+## std::vector ir mano vektoriaus klases vidutinio programos veikimo laiko palyginimas
+
+### Pastaba: Kiekvienas greitis - vidutinis 3 testu laikas (sek.).
+
+| Studentu kiekis | std::vector | Mano vcector |
+| :-------------: | :---------: | :----------: |
+|     100000      |  0.588639   |   1.102664   |
+|     1000000     |  5.930762   |   7.65413    |
+|    10000000     |  90.06457   |  99.740036   |
+
 # Rule of Five realizacija
 
 | Metodas                                  | Paskirtis                         |
