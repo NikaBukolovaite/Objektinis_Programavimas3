@@ -1,0 +1,57 @@
+\doxysection{funkcijos.\+h}
+\hypertarget{funkcijos_8h_source}{}\label{funkcijos_8h_source}\index{Vector/funkcijos.h@{Vector/funkcijos.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FUNCTIONS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FUNCTIONS\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../santrauka.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}studentas.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}vector.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ aplankalo\_pavadinimas\ =\ \textcolor{stringliteral}{"{}NuskaitymoFailai"{}};}
+\DoxyCodeLine{00008\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classvector}{vector<std::chrono::duration<double>}}>\ testuLaikai;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classvector}{vector<std::chrono::duration<double>}}>\ kurimoLaikai;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classvector}{vector<std::chrono::duration<double>}}>\ rusiavimoLaikai;}
+\DoxyCodeLine{00011\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classvector}{vector<std::chrono::duration<double>}}>\ kietekuLaikai;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classvector}{vector<std::chrono::duration<double>}}>\ vargsiukuLaikai;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classvector}{vector<std::chrono::duration<double>}}>\ vienoIsSesiuRusiavimoLaikai;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ testuSkaicius;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ kurimuSkaicius;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ rusiavimoSkaicius;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ vienoIsSesiuRusiavimoSkaicius;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ kiekYraStudentuFaile;}
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ aplankalas();}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{int}\ failo\_generavimo\_pasirinkimas(\mbox{\hyperlink{classvector}{vector<string>}}\ \&failai);}
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ failo\_generavimas(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&failo\_pavadinimas,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ studentu\_skaicius);}
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ parodytiEsamusFailus();}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{string}\ koki\_faila\_nuskaityti();}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{int}\ Meniu();}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ failo\_nuskaitymas(\mbox{\hyperlink{classvector}{vector<Studentas>}}\ \&studentai,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&failo\_pavadinimas);}
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{void}\ pabaiga(\textcolor{keywordtype}{int}\ pasirinkimas,\ \textcolor{keywordtype}{int}\ generuoti,\ \textcolor{keywordtype}{int}\ pasirinkimas\_rusiavimui,\ \textcolor{keywordtype}{int}\ kaip\_surusiuoti);}
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ nuskaitytiIsFailo(\mbox{\hyperlink{classvector}{vector<Studentas>}}\ \&studentai,\ \textcolor{keywordtype}{string}\ failo\_pasirinkimas);}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{bool}\ ivestiStudenta(\mbox{\hyperlink{class_studentas}{Studentas}}\ \&laikinas);}
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ generuotiVardaPavarde(\mbox{\hyperlink{class_studentas}{Studentas}}\ \&laikinas);}
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{void}\ ivestiPazymius(\mbox{\hyperlink{class_studentas}{Studentas}}\ \&laikinas);}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ generuotiPazymius(\mbox{\hyperlink{class_studentas}{Studentas}}\ \&laikinas);}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ informacijos\_ivedimas(\mbox{\hyperlink{classvector}{vector<Studentas>}}\ \&studentai,\ \textcolor{keywordtype}{int}\ pasirinkimas,\ \textcolor{keywordtype}{string}\ failo\_pavadinimas);}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{int}\ koks\_galutinis();}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{int}\ failas\_ar\_konsole();}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{int}\ rusiavimas(\textcolor{keywordtype}{int}\ skaiciavimo\_budas);}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{bool}\ vardoRusiavimas(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\ \&studentas,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\ \&studentas2);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{bool}\ pavardeRusiavimas(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\ \&studentas,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\ \&studentas2);}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{bool}\ vidurkioNuoMazRusiavimas(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\ \&studentas,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\ \&studentas2);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{bool}\ vidurkioNuoDidRusiavimas(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\ \&studentas,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\ \&studentas2);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{bool}\ medianosNuoMazRusiavimas(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\ \&studentas,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\ \&studentas2);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{bool}\ medianosNuoDidRusiavimas(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\ \&studentas,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_studentas}{Studentas}}\ \&studentas2);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{int}\ pagal\_ka\_rusiuoti\_studentus\_i\_failus(\mbox{\hyperlink{classvector}{vector<Studentas>}}\ \&studentai,\ \textcolor{keywordtype}{int}\ skaiciavimo\_budas);}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{int}\ papildomas\_rusiavimas();}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ studentu\_rusiavimas\_3strategija(\mbox{\hyperlink{classvector}{vector<Studentas>}}\ \&studentai,\ \textcolor{keywordtype}{int}\ skaiciavimo\_budas,\ \textcolor{keywordtype}{int}\ kaip\_surusiuoti,\ \textcolor{keywordtype}{int}\ rusiavimo\_budas);}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ output(ostream\ \&out,\ \mbox{\hyperlink{classvector}{vector<Studentas>}}\ studentai,\ \textcolor{keywordtype}{int}\ skaiciavimo\_budas,\ \textcolor{keywordtype}{int}\ isvedimo\_budas);}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ rusiavimoIf(\mbox{\hyperlink{classvector}{vector<Studentas>}}\ \&studentai,\ \textcolor{keywordtype}{int}\ kaip\_surusiuoti,\ \textcolor{keywordtype}{int}\ skaiciavimo\_budas);}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ terminalas(\mbox{\hyperlink{classvector}{vector<Studentas>}}\ \&studentai,\ \textcolor{keywordtype}{int}\ kaip\_surusiuoti,\ \textcolor{keywordtype}{int}\ skaiciavimo\_budas);}
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ failas(\mbox{\hyperlink{classvector}{vector<Studentas>}}\ \&studentai,\ \textcolor{keywordtype}{int}\ kaip\_surusiuoti,\ \textcolor{keywordtype}{int}\ skaiciavimo\_budas);}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ spartosTestas();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

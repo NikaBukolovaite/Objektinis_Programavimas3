@@ -1,0 +1,883 @@
+\chapter{Trecia versija}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Trecia versija@{Trecia versija}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{💻 Kompiuterio charakteristikos}{💻 Kompiuterio charakteristikos}}\label{md__r_e_a_d_m_e_autotoc_md1}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Komponentas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Specifikacija    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Komponentas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Specifikacija    }\\\cline{1-2}
+\endhead
+CPU   &\PBS\centering AMD Ryzen 5 4600H     \\\cline{1-2}
+RAM   &\PBS\centering 8GB DDR4     \\\cline{1-2}
+DISK   &\PBS\centering SSD (NVMe)    \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{🛠️ Kompiliavimo instrukcijos}{🛠️ Kompiliavimo instrukcijos}}\label{md__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item \href{https://sourceforge.net/projects/mingw-w64/}{\texttt{ Atsisiusti g++}}
+\item \href{https://gnuwin32.sourceforge.net/packages/make.htm}{\texttt{ Atsisiusti Make}}
+\item Kopijuoti projekto direktorija {\ttfamily git clone \href{https://github.com/NikaBukolovaite/Objektinis_Programavimas.git}{\texttt{ https\+://github.\+com/\+Nika\+Bukolovaite/\+Objektinis\+\_\+\+Programavimas.\+git}}} (arba Download zip)
+\item Atsidaryti komandine eilute projekto direktorijoje ir irasyti\+: {\ttfamily make -\/C Vector}. Jei norima paleisti testus\+: {\ttfamily make -\/C Vector testai}.
+\item Paleisti norima programos versija\+: {\ttfamily ./\+Vector/vektoriai.exe}
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{📃 Programos naudojimosi instrukcijos}{📃 Programos naudojimosi instrukcijos}}\label{md__r_e_a_d_m_e_autotoc_md3}
+Si programa skirta studentu duomenu valdymui ir analizei, suteikiant ivairias galimybes ivesti, generuoti, rusiuoti ir analizuoti studentu informacija. Programos meniu siulo siuos pasirinkimus\+:\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{Pagrindinio meniu pasirinkimai\+:}{Pagrindinio meniu pasirinkimai\+:}}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyEnumerate}
+\item Studentus ir pazymius ivesti ranka Leidzia vartotojui rankiniu budu ivesti studentu vardus ir ju pazymius.
+\item Generuoti pazymius, bet studentus ivesti ranka Vartotojas iveda studentu vardus ir kiek viso studentas turi pazymiu, o programa automatiskai sugeneruoja atsitiktinius pazymius tiems studentams.
+\item Generuoti pazymius ir studentus Programa automatiskai sugeneruoja studentus su atsitiktiniais vardais, pavardem ir pazymiais.
+\item Nuskaitymas is failo Leidzia nuskaityti studentu duomenis is pasirinkto failo, esancio "{}\+Nuskaitymo\+Failai"{} aplankale.
+\item Baigti programa Uzbaigius programa bus pateikta programos veikimo suvestine.
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{Pasirinkus 4 punkta meniu\+:}{Pasirinkus 4 punkta meniu\+:}}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyEnumerate}
+\item Generuoti faila Vartotojas turi galimybe sugeneruoti pasirinkta failu kieki su vartotojo pasirinktu studentu kiekiu. Pazymius ir ju kieki programa automatiskai generuoja atsitiktinai.
+\item Pasirinkti ivesties faila Leidzia vartotojui pasirinkti konkrecia ivesties faila is "{}\+Nuskaitymo\+Failai"{} aplankalo.
+\item Testavimas Atlieka programos nasumo testus, iskaitant failu kurimo, nuskaitymo, rusiavimo, kategorizavimo ir isvesties greicio matavimus.
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{Pastabos\+:}{Pastabos\+:}}\label{md__r_e_a_d_m_e_autotoc_md6}
+Studentus isvesti galima tokiais budais\+:
+
+
+\begin{DoxyEnumerate}
+\item I viena bendra faila "{}rezultatai.\+txt"{}
+\item I du atskirus failus pagal galutini pazymi -\/ "{}kietekai.\+txt"{} ir "{}vargsiukai.\+txt"{} -\/ vartotojas turi pasirinkima tarp 3 strategiju, kurios nulemia, kokiu budu bus isrusuoti studentai i du failus.
+\end{DoxyEnumerate}
+
+Noredami naudoti 4 punkta su savo failais, ikelkite juos i "{}\+Nuskaitymo\+Failai"{} aplankala. Testavimo rezime galima ivertinti programos efektyvuma atliekant ivairias operacijas su skirtingo dydzio duomenu rinkiniais\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysection{\texorpdfstring{v.\+pradine versija}{v.\+pradine versija}}\label{md__r_e_a_d_m_e_autotoc_md7}
+Pradineje versijoje suurta bazine studentu valdymo programa, kuri leido raniniu budu surasyti studentu vardus, pavardes, pazymius ir egzamino rezultata. Turejo funkcijas galutinio pazymio skaiciavimui pagal vidurki arba mediana.\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysection{\texorpdfstring{v0.\+1 versija}{v0.\+1 versija}}\label{md__r_e_a_d_m_e_autotoc_md8}
+Optimizuota pradine versija, programai nebereikia is anksto zinoti, kiek viso bus studentu ir namu darbu. Taip pat pridetas meniu su 4 pasirinkimais\+:
+
+
+\begin{DoxyEnumerate}
+\item Ivesti studentu varda, pavarde, pazymius raniniu budu.
+\item Sugeneruoti pazymius atsitiktinai ir rankiniu budu surasyti studentu vardus ir pavardes.
+\item Atsititinai sugeneruoti visus studentu duomenis ir pazymius.
+\item Baigti programa.
+\end{DoxyEnumerate}
+
+Si versija realizuota dviem budais\+:
+
+
+\begin{DoxyEnumerate}
+\item naudojamas masyvas pazymiu saugojimui;
+\item naudojamas std\+::vector tipo konteineris studentu ir pazymiu saugojimui.
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysection{\texorpdfstring{v0.\+2 versija}{v0.\+2 versija}}\label{md__r_e_a_d_m_e_autotoc_md9}
+I meniu pridetas 5 pasirinkimas -\/ skaitymas is failo. Taip pat programa testuoja, kaip greitai yra nuskaitomas failas priklausomai nuo jame esancio studentu kiekio. Taip pat atsirado pasirinkimas, ar studentus isvesti i konsole, ar i faila "{}rezultatati.\+txt"{}.\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysection{\texorpdfstring{v0.\+3 versija}{v0.\+3 versija}}\label{md__r_e_a_d_m_e_autotoc_md10}
+Prideta klaidu gaudymo sistema.\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysection{\texorpdfstring{v0.\+4 versija}{v0.\+4 versija}}\label{md__r_e_a_d_m_e_autotoc_md11}
+Prideta galimybe generuoti failus is kuriu veliau bus nuskaitoma informacija. Visi failai yra archgyvuojami atsirame aplankale "{}\+Nuskaitymo\+Failai"{}. Atsirado pasirinkimas ar visus studentus isvesti i konsole/faila "{}rezultatai.\+txt"{}, ar iskirstyti studentus i 2 atskirus failus "{}kietekai.\+txt"{} ir "{}vargsiukai.\+txt"{} pagal pazymius (galutinis balas \texorpdfstring{$<$}{<} 5.\+0 ir galutinis balas \texorpdfstring{$>$}{>}= 5.\+0). Taip pat vykdoma programos veikimo greičio (spartos) analizę.\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysection{\texorpdfstring{v1.\+0 pradine versija}{v1.\+0 pradine versija}}\label{md__r_e_a_d_m_e_autotoc_md12}
+Sukurtos 3 programos su skirtingais konteineriais -\/ std\+::vector, std\+::list ir std\+::deque.\hypertarget{md__r_e_a_d_m_e_autotoc_md13}{}\doxysection{\texorpdfstring{v1.\+0 versija}{v1.\+0 versija}}\label{md__r_e_a_d_m_e_autotoc_md13}
+Sukurtos 3 skirtingos strategijos studentu rusiavimui i 2 failus -\/ "{}kieteai.\+txt"{} ir "{}vargsiukai.\+txt"{}\hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysection{\texorpdfstring{v1.\+1 versija}{v1.\+1 versija}}\label{md__r_e_a_d_m_e_autotoc_md14}
+Palikta viena -\/ greiciausia strategija, vieno tipo konteineris (vector), pagreitintas failu nuskaitymas ir kodas perrasytas objetiskai (naudojant klases).\hypertarget{md__r_e_a_d_m_e_autotoc_md15}{}\doxysection{\texorpdfstring{v1.\+2 versija}{v1.\+2 versija}}\label{md__r_e_a_d_m_e_autotoc_md15}
+Igyvendintas ,,Rule of Five"{} ir ivesties/isvesties operatoriai. Padaryti siu metodu testai.  @section autotoc\+\_\+md16 v1.\+5 versija  \+Sukurta abstrakti klase "{}\doxylink{class_zmogus}{Zmogus}"{}ir dabar klase "{}\doxylink{class_studentas}{Studentas}"{} yra isvestine klase is "{}\doxylink{class_zmogus}{Zmogus}"{}. Kad patikrinti abstrakciaja klase faile testai.\+cpp daromas papildomas testavimas. $<$img src="{}\href{https://github.com/NikaBukolovaite/Objektinis_Programavimas2/blob/a9b2ad68fe4f7cb63bb6e90d131ae9c11f2281db/Nuotraukos/Testai/Screenshot\%202025-04-25\%20013829.png}{\texttt{ https\+://github.\+com/\+Nika\+Bukolovaite/\+Objektinis\+\_\+\+Programavimas2/blob/a9b2ad68fe4f7cb63bb6e90d131ae9c11f2281db/\+Nuotraukos/\+Testai/\+Screenshot\%202025-\/04-\/25\%20013829.\+png}}"{} alt="{}imagine alt"{}/$>$  @section autotoc\+\_\+md17 v2.\+0 versija  \+Padaryta dokumentacija su Doxygen (html ir latex.\+pdf) ir realizuoti Unit testai naudojant "{}Google test"{}. \+Visi testai praejo sekmingai. $<$img src="{}\href{https://github.com/NikaBukolovaite/Objektinis_Programavimas2/blob/430e4f3d45d5afef750e2593f5c82c40b9666eb7/Nuotraukos/Testai/Screenshot\%202025-05-09\%20212011.png}{\texttt{ https\+://github.\+com/\+Nika\+Bukolovaite/\+Objektinis\+\_\+\+Programavimas2/blob/430e4f3d45d5afef750e2593f5c82c40b9666eb7/\+Nuotraukos/\+Testai/\+Screenshot\%202025-\/05-\/09\%20212011.\+png}}"{} alt="{}imagine alt"{}/$>$  @section autotoc\+\_\+md18 v3.\+0 versija  \+Sukurta nuosava vektoriaus klase, atlikti talpos ir greicio testati, sukurtas setup failas.  @section autotoc\+\_\+md19 v3.\+0 versijos testavimas  @subsection autotoc\+\_\+md20 Laiko ir talpos testavimai  @subsubsection autotoc\+\_\+md21 Pastaba\+: laikas matuojamas sekundemis.  $<$table class="{}markdown\+Table"{}$>$   $<$tr class="{}markdown\+Table\+Head"{}$>$    $<$th class="{}markdown\+Table\+Head\+Center"{}\texorpdfstring{$>$}{>} Kiekis   
+
+std\+::vector sparta   
+
+Mano vector sparta   
+
+std\+::vector perskirstymai   
+
+Mano vector perskirstymai    
+
+10000   
+
+0.\+000414   
+
+0.\+000483   
+
+14   
+
+14    
+
+100000   
+
+0.\+002356   
+
+0.\+002296   
+
+17   
+
+17    
+
+1000000   
+
+0.\+026129   
+
+0.\+021990   
+
+20   
+
+20    
+
+10000000   
+
+0.\+249020   
+
+0.\+236822   
+
+24   
+
+24    
+
+100000000   
+
+2.\+473831   
+
+2.\+340248   
+
+27   
+
+27   \hypertarget{md__r_e_a_d_m_e_autotoc_md22}{}\doxysubsection{\texorpdfstring{std\+::vector ir mano vektoriaus klases vidutinio programos veikimo laiko palyginimas}{std\+::vector ir mano vektoriaus klases vidutinio programos veikimo laiko palyginimas}}\label{md__r_e_a_d_m_e_autotoc_md22}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md23}{}\doxysubsubsection{\texorpdfstring{Pastaba\+: Kiekvienas greitis -\/ vidutinis 3 testu laikas (sek.).}{Pastaba\+: Kiekvienas greitis -\/ vidutinis 3 testu laikas (sek.).}}\label{md__r_e_a_d_m_e_autotoc_md23}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentu kiekis   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mano vcector    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Studentu kiekis   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ std\+::vector   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Mano vcector    }\\\cline{1-3}
+\endhead
+\PBS\centering 100000   &\PBS\centering 0.\+588639   &\PBS\centering 1.\+102664    \\\cline{1-3}
+\PBS\centering 1000000   &\PBS\centering 5.\+930762   &\PBS\centering 7.\+65413    \\\cline{1-3}
+\PBS\centering 10000000   &\PBS\centering 90.\+06457   &\PBS\centering 99.\+740036   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md24}{}\doxysection{\texorpdfstring{Rule of Five realizacija}{Rule of Five realizacija}}\label{md__r_e_a_d_m_e_autotoc_md24}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Metodas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirtis    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Metodas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Paskirtis    }\\\cline{1-2}
+\endhead
+{\ttfamily \doxylink{class_studentas}{Studentas}(const \doxylink{class_studentas}{Studentas}\&)}   &Kopijavimo konstruktorius    \\\cline{1-2}
+{\ttfamily \doxylink{class_studentas}{Studentas}\& operator=(const \doxylink{class_studentas}{Studentas}\&)}   &Kopijavimo priskyrimo operatorius    \\\cline{1-2}
+{\ttfamily \doxylink{class_studentas}{Studentas}(\doxylink{class_studentas}{Studentas}\&\&)}   &Perkelimo konstruktorius    \\\cline{1-2}
+{\ttfamily \doxylink{class_studentas}{Studentas}\& operator=(\doxylink{class_studentas}{Studentas}\&\&)}   &Perkelimo priskyrimo operatorius    \\\cline{1-2}
+{\ttfamily \texorpdfstring{$\sim$}{\string~}\+Studentas()}   &Destruktorius   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md25}{}\doxysection{\texorpdfstring{IO operatoriai}{IO operatoriai}}\label{md__r_e_a_d_m_e_autotoc_md25}
+
+\begin{DoxyItemize}
+\item {\ttfamily operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}} leidzia nuskaityti studenta is srauto.
+\item {\ttfamily operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} leidzia isvesti studenta i srauta.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md26}{}\doxysection{\texorpdfstring{Rule of Five ir IO operatorius testai}{Rule of Five ir IO operatorius testai}}\label{md__r_e_a_d_m_e_autotoc_md26}
+Visi „\+Rule of Five“ metodai bei IO operatoriai testuojami naudojant {\ttfamily assert}\+:
+
+
+\begin{DoxyItemize}
+\item Default konstruktorius
+\item Kopijavimo konstruktorius ir operatorius
+\item Perkėlimo konstruktorius ir operatorius
+\item IO operatoriai (\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} ir \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<})
+\end{DoxyItemize}
+
+\hypertarget{md__r_e_a_d_m_e_autotoc_md27}{}\doxysection{\texorpdfstring{V1.\+1 versijos testavimai ir palyginimas su V1.\+0 versija (Nauja)}{V1.\+1 versijos testavimai ir palyginimas su V1.\+0 versija (Nauja)}}\label{md__r_e_a_d_m_e_autotoc_md27}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md28}{}\doxysubsubsection{\texorpdfstring{Pastaba\+: Kiekvienas greitis -\/ vidutinis 3 testu laikas (sek.). Programoje naudojamas konteineris -\/ vektorius. Paleidziama 3 strategija.}{Pastaba\+: Kiekvienas greitis -\/ vidutinis 3 testu laikas (sek.). Programoje naudojamas konteineris -\/ vektorius. Paleidziama 3 strategija.}}\label{md__r_e_a_d_m_e_autotoc_md28}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{7}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Kompiliavimo veliava   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Greitis 100000 (Naudojant struct)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Greitis 1000000 (Naudojant struct)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Exe failo dydis (Naudojant struct)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Greitis 100000 (Naudojant class)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Greitis 1000000 (Naudojant class)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Exe failo dydis (Naudojant class)    }\\\cline{1-7}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Kompiliavimo veliava   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Greitis 100000 (Naudojant struct)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Greitis 1000000 (Naudojant struct)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Exe failo dydis (Naudojant struct)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Greitis 100000 (Naudojant class)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Greitis 1000000 (Naudojant class)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Exe failo dydis (Naudojant class)    }\\\cline{1-7}
+\endhead
+\PBS\centering Jokia veliava   &\PBS\centering 0.\+444916   &\PBS\centering 5.\+298091   &\PBS\centering 544 KB   &\PBS\centering 0.\+728926   &\PBS\centering 15.\+676393   &\PBS\centering 544 KB    \\\cline{1-7}
+\PBS\centering O1   &\PBS\centering 0.\+448639   &\PBS\centering 5.\+430932   &\PBS\centering 544 KB   &\PBS\centering 0.\+743053   &\PBS\centering 15.\+877131   &\PBS\centering 532 KB    \\\cline{1-7}
+\PBS\centering O2   &\PBS\centering 0.\+454392   &\PBS\centering 5.\+462449   &\PBS\centering 544 KB   &\PBS\centering 0.\+729011   &\PBS\centering 15.\+71323   &\PBS\centering 532 KB    \\\cline{1-7}
+\PBS\centering O3   &\PBS\centering 0.\+451663   &\PBS\centering 5.\+422904   &\PBS\centering 538 KB   &\PBS\centering 0.\+734674   &\PBS\centering 15.\+707292   &\PBS\centering 532 KB   \\\cline{1-7}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md29}{}\doxysection{\texorpdfstring{V1.\+0 versijos testavimai (Sena)}{V1.\+0 versijos testavimai (Sena)}}\label{md__r_e_a_d_m_e_autotoc_md29}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md30}{}\doxysection{\texorpdfstring{Programos testavimo rezultatai pradiniam v1.\+0 release}{Programos testavimo rezultatai pradiniam v1.\+0 release}}\label{md__r_e_a_d_m_e_autotoc_md30}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md31}{}\doxysubsection{\texorpdfstring{1000 Studentų analizė}{1000 Studentų analizė}}\label{md__r_e_a_d_m_e_autotoc_md31}
+Viso faile yra 18 namų darbų pažymių\hypertarget{md__r_e_a_d_m_e_autotoc_md32}{}\doxysubsubsection{\texorpdfstring{Nuskaitymas (sek.)\+:}{Nuskaitymas (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md32}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+0072475   &\PBS\raggedleft 0.\+0082808   &\PBS\raggedleft 0.\+0145365    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0044263   &\PBS\raggedleft 0.\+0043628   &\PBS\raggedleft 0.\+007807    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+0046425   &\PBS\raggedleft 0.\+0046128   &\PBS\raggedleft 0.\+0067956   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md33}{}\doxysubsubsection{\texorpdfstring{Rusiavimas faile (sek.)\+:}{Rusiavimas faile (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md33}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+004638   &\PBS\raggedleft 0.\+0032458   &\PBS\raggedleft 0.\+0077588    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0045471   &\PBS\raggedleft 0.\+0035307   &\PBS\raggedleft 0.\+0096666    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+0045742   &\PBS\raggedleft 0.\+0031883   &\PBS\raggedleft 0.\+0076848   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md34}{}\doxysubsubsection{\texorpdfstring{Rusiavimas i kietekus ir vargsiukus (sek.)\+:}{Rusiavimas i kietekus ir vargsiukus (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md34}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+0006764   &\PBS\raggedleft 0.\+0004916   &\PBS\raggedleft 0.\+0007002    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0006803   &\PBS\raggedleft 0.\+00069   &\PBS\raggedleft 0.\+0008425    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+0006776   &\PBS\raggedleft 0.\+0004679   &\PBS\raggedleft 0.\+0008806   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md35}{}\doxysubsubsection{\texorpdfstring{Vidurkiai (sek.)\+:}{Vidurkiai (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md35}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+Bendras failo nuskaitymo laikas   &\PBS\raggedleft 0.\+016316   &\PBS\raggedleft 0.\+017256   &\PBS\raggedleft 0.\+029139    \\\cline{1-4}
+Vidutinis failo nuskaitymo laikas   &\PBS\raggedleft 0.\+005439   &\PBS\raggedleft 0.\+005752   &\PBS\raggedleft 0.\+009713    \\\cline{1-4}
+Bendras failo rusiavimo laikas   &\PBS\raggedleft 0.\+013759   &\PBS\raggedleft 0.\+009965   &\PBS\raggedleft 0.\+025110    \\\cline{1-4}
+Vidutinis failo rusiavimo laikas   &\PBS\raggedleft 0.\+002293   &\PBS\raggedleft 0.\+001661   &\PBS\raggedleft 0.\+004185    \\\cline{1-4}
+Bendras failo rusiavimo i kietekus ir vargsiukus laikas   &\PBS\raggedleft 0.\+002034   &\PBS\raggedleft 0.\+001650   &\PBS\raggedleft 0.\+002423    \\\cline{1-4}
+Vidutinis failo rusiavimo i kietekus ir vargsiukus laikas   &\PBS\raggedleft 0.\+000678   &\PBS\raggedleft 0.\+000550   &\PBS\raggedleft 0.\+000808    \\\cline{1-4}
+Bendras programos veikimo laikas   &\PBS\raggedleft 0.\+032109   &\PBS\raggedleft 0.\+028871   &\PBS\raggedleft 0,282662    \\\cline{1-4}
+Vidutinis programos veikimo laikas   &\PBS\raggedleft 0.\+010703   &\PBS\raggedleft 0.\+0096236667   &\PBS\raggedleft 0.\+09422066   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md36}{}\doxysubsection{\texorpdfstring{10000 Studentu analize}{10000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md36}
+Viso faile yra 18 namų darbų pažymių\hypertarget{md__r_e_a_d_m_e_autotoc_md37}{}\doxysubsubsection{\texorpdfstring{Nuskaitymas (sek.)\+:}{Nuskaitymas (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md37}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+0452272   &\PBS\raggedleft 0.\+0787392   &\PBS\raggedleft 0.\+0722085    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0491618   &\PBS\raggedleft 0.\+0706549   &\PBS\raggedleft 0.\+0647305    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+0396006   &\PBS\raggedleft 0.\+0719151   &\PBS\raggedleft 0.\+0690108   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md38}{}\doxysubsubsection{\texorpdfstring{Rusiavimas faile (sek.)\+:}{Rusiavimas faile (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md38}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+0064087   &\PBS\raggedleft 0.\+0836519   &\PBS\raggedleft 0.\+102892    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0054171   &\PBS\raggedleft 0.\+083851   &\PBS\raggedleft 0.\+10707    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+006708   &\PBS\raggedleft 0.\+0902805   &\PBS\raggedleft 0.\+0987082   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md39}{}\doxysubsubsection{\texorpdfstring{Rusiavimas i kietekus ir vargsiukus (sek.)\+:}{Rusiavimas i kietekus ir vargsiukus (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md39}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+0550808   &\PBS\raggedleft 0.\+0103057   &\PBS\raggedleft 0.\+0074288    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0555215   &\PBS\raggedleft 0.\+0094287   &\PBS\raggedleft 0.\+0124954    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+0573123   &\PBS\raggedleft 0.\+0122553   &\PBS\raggedleft 0.\+007408   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md40}{}\doxysubsubsection{\texorpdfstring{Vidurkiai (sek.)\+:}{Vidurkiai (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md40}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+Bendras failo nuskaitymo laikas   &\PBS\raggedleft 0.\+133990   &\PBS\raggedleft 0.\+221309   &\PBS\raggedleft 0.\+205950    \\\cline{1-4}
+Vidutinis failo nuskaitymo laikas   &\PBS\raggedleft 0.\+044663   &\PBS\raggedleft 0.\+073770   &\PBS\raggedleft 0.\+068650    \\\cline{1-4}
+Bendras failo rusiavimo laikas   &\PBS\raggedleft 0.\+167915   &\PBS\raggedleft 0.\+257783   &\PBS\raggedleft 0.\+308670    \\\cline{1-4}
+Vidutinis failo rusiavimo laikas   &\PBS\raggedleft 0.\+027986   &\PBS\raggedleft 0.\+042964   &\PBS\raggedleft 0.\+051445    \\\cline{1-4}
+Bendras failo rusiavimo i kietekus ir vargsiukus laikas   &\PBS\raggedleft 0.\+018534   &\PBS\raggedleft 0.\+031990   &\PBS\raggedleft 0.\+027332    \\\cline{1-4}
+Vidutinis failo rusiavimo i kietekus ir vargsiukus laikas   &\PBS\raggedleft 0.\+006178   &\PBS\raggedleft 0.\+010663   &\PBS\raggedleft 0.\+009111    \\\cline{1-4}
+Bendras programos veikimo laikas   &\PBS\raggedleft 0.\+320439   &\PBS\raggedleft 0.\+511082   &\PBS\raggedleft 0.\+541952    \\\cline{1-4}
+Vidutinis programos veikimo laikas   &\PBS\raggedleft 0.\+106813   &\PBS\raggedleft 0.\+1703606667   &\PBS\raggedleft 0.\+18065066   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md41}{}\doxysubsection{\texorpdfstring{100000 Studentu analize}{100000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md41}
+Viso faile yra 14 namų darbų pažymių\hypertarget{md__r_e_a_d_m_e_autotoc_md42}{}\doxysubsubsection{\texorpdfstring{Nuskaitymas (sek.)\+:}{Nuskaitymas (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md42}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+333077   &\PBS\raggedleft 0.\+577193   &\PBS\raggedleft 0.\+530389    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+321548   &\PBS\raggedleft 0.\+613278   &\PBS\raggedleft 0.\+533229    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+325427   &\PBS\raggedleft 0.\+586978   &\PBS\raggedleft 0.\+537504   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md43}{}\doxysubsubsection{\texorpdfstring{Rusiavimas faile (sek.)\+:}{Rusiavimas faile (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md43}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+673029   &\PBS\raggedleft 1.\+0759   &\PBS\raggedleft 1.\+31066    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+680436   &\PBS\raggedleft 1.\+07855   &\PBS\raggedleft 1.\+26595    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+678414   &\PBS\raggedleft 1.\+08067   &\PBS\raggedleft 1.\+28526   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md44}{}\doxysubsubsection{\texorpdfstring{Rusiavimas i kietekus ir vargsiukus (sek.)\+:}{Rusiavimas i kietekus ir vargsiukus (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md44}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+0569962   &\PBS\raggedleft 0.\+0931008   &\PBS\raggedleft 0.\+0756288    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0575559   &\PBS\raggedleft 0.\+10202   &\PBS\raggedleft 0.\+0733271    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+0557648   &\PBS\raggedleft 0.\+0904348   &\PBS\raggedleft 0.\+0774862   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md45}{}\doxysubsubsection{\texorpdfstring{Vidurkiai (sek.)\+:}{Vidurkiai (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md45}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+Bendras failo nuskaitymo laikas   &\PBS\raggedleft 0.\+980052   &\PBS\raggedleft 1.\+777449   &\PBS\raggedleft 1.\+601122    \\\cline{1-4}
+Vidutinis failo nuskaitymo laikas   &\PBS\raggedleft 0.\+326684   &\PBS\raggedleft 0.\+592483   &\PBS\raggedleft 0.\+533707    \\\cline{1-4}
+Bendras failo rusiavimo laikas   &\PBS\raggedleft 2.\+031878   &\PBS\raggedleft 3.\+235127   &\PBS\raggedleft 3.\+861866    \\\cline{1-4}
+Vidutinis failo rusiavimo laikas   &\PBS\raggedleft 0.\+338646   &\PBS\raggedleft 0.\+539188   &\PBS\raggedleft 0.\+643644    \\\cline{1-4}
+Bendras failo rusiavimo i kietekus ir vargsiukus laikas   &\PBS\raggedleft 0.\+170317   &\PBS\raggedleft 0.\+285555   &\PBS\raggedleft 0.\+226442    \\\cline{1-4}
+Vidutinis failo rusiavimo i kietekus ir vargsiukus laikas   &\PBS\raggedleft 0.\+056772   &\PBS\raggedleft 0.\+095185   &\PBS\raggedleft 0.\+075481    \\\cline{1-4}
+Bendras programos veikimo laikas   &\PBS\raggedleft 3.\+182247   &\PBS\raggedleft 5.\+298131   &\PBS\raggedleft 5.\+68943    \\\cline{1-4}
+Vidutinis programos veikimo laikas   &\PBS\raggedleft 1.\+060749   &\PBS\raggedleft 1.\+7660436   &\PBS\raggedleft 1.\+8967466   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md46}{}\doxysubsection{\texorpdfstring{1000000 Studentu analize}{1000000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md46}
+Viso faile yra 19 namų darbų pažymių\hypertarget{md__r_e_a_d_m_e_autotoc_md47}{}\doxysubsubsection{\texorpdfstring{Nuskaitymas (sek.)\+:}{Nuskaitymas (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md47}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 3.\+95492   &\PBS\raggedleft 7.\+15517   &\PBS\raggedleft 6.\+40691    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 3.\+87019   &\PBS\raggedleft 6.\+7632   &\PBS\raggedleft 6.\+42821    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 3.\+84463   &\PBS\raggedleft 6.\+80788   &\PBS\raggedleft 6.\+49617   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md48}{}\doxysubsubsection{\texorpdfstring{Rusiavimas faile (sek.)\+:}{Rusiavimas faile (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md48}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 9.\+88418   &\PBS\raggedleft 13.\+6062   &\PBS\raggedleft 14.\+4732    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 9.\+8109   &\PBS\raggedleft 12.\+9613   &\PBS\raggedleft 14.\+8146    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 9.\+82957   &\PBS\raggedleft 12.\+8813   &\PBS\raggedleft 14.\+3128   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md49}{}\doxysubsubsection{\texorpdfstring{Rusiavimas i kietekus ir vargsiukus (sek.)\+:}{Rusiavimas i kietekus ir vargsiukus (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md49}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+574952   &\PBS\raggedleft 0.\+919172   &\PBS\raggedleft 0.\+90257    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+574212   &\PBS\raggedleft 0.\+953543   &\PBS\raggedleft 0.\+921527    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+574577   &\PBS\raggedleft 1.\+02545   &\PBS\raggedleft 0.\+940349   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md50}{}\doxysubsubsection{\texorpdfstring{Vidurkiai (sek.)\+:}{Vidurkiai (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md50}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+Bendras failo nuskaitymo laikas   &\PBS\raggedleft 11.\+669734   &\PBS\raggedleft 20.\+726261   &\PBS\raggedleft 19.\+331293    \\\cline{1-4}
+Vidutinis failo nuskaitymo laikas   &\PBS\raggedleft 3.\+889911   &\PBS\raggedleft 6.\+908754   &\PBS\raggedleft 6.\+443764    \\\cline{1-4}
+Bendras failo rusiavimo laikas   &\PBS\raggedleft 29.\+524652   &\PBS\raggedleft 39.\+448779   &\PBS\raggedleft 43.\+600653    \\\cline{1-4}
+Vidutinis failo rusiavimo laikas   &\PBS\raggedleft 4.\+920775   &\PBS\raggedleft 6.\+574797   &\PBS\raggedleft 7.\+266776    \\\cline{1-4}
+Bendras failo rusiavimo i kietekus ir vargsiukus laikas   &\PBS\raggedleft 1.\+723741   &\PBS\raggedleft 2.\+898165   &\PBS\raggedleft 2.\+764446    \\\cline{1-4}
+Vidutinis failo rusiavimo i kietekus ir vargsiukus laikas   &\PBS\raggedleft 0.\+574580   &\PBS\raggedleft 0.\+966055   &\PBS\raggedleft 0.\+921482    \\\cline{1-4}
+Bendras programos veikimo laikas   &\PBS\raggedleft 42.\+918127   &\PBS\raggedleft 63.\+073205   &\PBS\raggedleft 65.\+696392    \\\cline{1-4}
+Vidutinis programos veikimo laikas   &\PBS\raggedleft 14.\+3060423333   &\PBS\raggedleft 21.\+02440166   &\PBS\raggedleft 21.\+89879733   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md51}{}\doxysubsection{\texorpdfstring{10000000 Studentu analize}{10000000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md51}
+Viso faile yra 19 namų darbų pažymių\hypertarget{md__r_e_a_d_m_e_autotoc_md52}{}\doxysubsubsection{\texorpdfstring{Nuskaitymas (sek.)\+:}{Nuskaitymas (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md52}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 44.\+5152   &\PBS\raggedleft 55.\+7881   &\PBS\raggedleft 45.\+5688    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 43.\+9039   &\PBS\raggedleft 45.\+815   &\PBS\raggedleft 45.\+0055    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 41.\+9285   &\PBS\raggedleft 46.\+5904   &\PBS\raggedleft 50.\+5224   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md53}{}\doxysubsubsection{\texorpdfstring{Rusiavimas faile (sek.)\+:}{Rusiavimas faile (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md53}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 119.\+483   &\PBS\raggedleft 115.\+353   &\PBS\raggedleft 130.\+304    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 119.\+413   &\PBS\raggedleft 115.\+038   &\PBS\raggedleft 128.\+954    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 119.\+039   &\PBS\raggedleft 115.\+01   &\PBS\raggedleft 129.\+462   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md54}{}\doxysubsubsection{\texorpdfstring{Rusiavimas i kietekus ir vargsiukus (sek.)\+:}{Rusiavimas i kietekus ir vargsiukus (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md54}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 6.\+28305   &\PBS\raggedleft 11.\+1458   &\PBS\raggedleft 8.\+20431    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 6.\+71133   &\PBS\raggedleft 10.\+1772   &\PBS\raggedleft 8.\+78032    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 6.\+47369   &\PBS\raggedleft 9.\+98839   &\PBS\raggedleft 8.\+81014   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md55}{}\doxysubsubsection{\texorpdfstring{Vidurkiai (sek.)\+:}{Vidurkiai (sek.)\+:}}\label{md__r_e_a_d_m_e_autotoc_md55}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+Bendras failo nuskaitymo laikas   &\PBS\raggedleft 130.\+347577   &\PBS\raggedleft 148.\+193507   &\PBS\raggedleft 141.\+096647    \\\cline{1-4}
+Vidutinis failo nuskaitymo laikas   &\PBS\raggedleft 43.\+449192   &\PBS\raggedleft 49.\+397836   &\PBS\raggedleft 47.\+032216    \\\cline{1-4}
+Bendras failo rusiavimo laikas   &\PBS\raggedleft 357.\+935381   &\PBS\raggedleft 345.\+401288   &\PBS\raggedleft 388.\+718866    \\\cline{1-4}
+Vidutinis failo rusiavimo laikas   &\PBS\raggedleft 59.\+655897   &\PBS\raggedleft 57.\+566881   &\PBS\raggedleft 64.\+786478    \\\cline{1-4}
+Bendras failo rusiavimo i kietekus ir vargsiukus laikas   &\PBS\raggedleft 19.\+468074   &\PBS\raggedleft 31.\+311419   &\PBS\raggedleft 25.\+794769    \\\cline{1-4}
+Vidutinis failo rusiavimo i kietekus ir vargsiukus laikas   &\PBS\raggedleft 6.\+489358   &\PBS\raggedleft 10.\+437140   &\PBS\raggedleft 8.\+598256    \\\cline{1-4}
+Bendras programos veikimo laikas   &\PBS\raggedleft 507.\+751032   &\PBS\raggedleft 524.\+906214   &\PBS\raggedleft 555.\+610282    \\\cline{1-4}
+Vidutinis programos veikimo laikas   &\PBS\raggedleft 169.\+250344   &\PBS\raggedleft 174.\+968738   &\PBS\raggedleft 185.\+20342733   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md56}{}\doxysection{\texorpdfstring{Programos rusiavimo i kietekus ir vargsiukus greitis priklausomai nuo strategiju rezultatai}{Programos rusiavimo i kietekus ir vargsiukus greitis priklausomai nuo strategiju rezultatai}}\label{md__r_e_a_d_m_e_autotoc_md56}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md57}{}\doxysubsection{\texorpdfstring{1 strategija}{1 strategija}}\label{md__r_e_a_d_m_e_autotoc_md57}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md58}{}\doxysubsubsection{\texorpdfstring{1000 Studentu analize}{1000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md58}
+Viso faile yra 18 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+002109   &\PBS\raggedleft 0.\+0012078   &\PBS\raggedleft 0.\+0014959    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0029129   &\PBS\raggedleft 0.\+0018549   &\PBS\raggedleft 0.\+0015636    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+002204   &\PBS\raggedleft 0.\+0017481   &\PBS\raggedleft 0.\+0021251    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 0.\+007226   &\PBS\raggedleft 0.\+004811   &\PBS\raggedleft 0.\+005185    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 0.\+002409   &\PBS\raggedleft 0.\+001604   &\PBS\raggedleft 0.\+001728   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md59}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md59}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md60}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md60}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md61}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md61}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md62}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md62}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md63}{}\doxysubsubsection{\texorpdfstring{10000 Studentu analize}{10000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md63}
+Viso faile yra 18 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+0160859   &\PBS\raggedleft 0.\+0126965   &\PBS\raggedleft 0.\+0116877    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0141176   &\PBS\raggedleft 0.\+0134405   &\PBS\raggedleft 0.\+0112872    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+0168775   &\PBS\raggedleft 0.\+0160783   &\PBS\raggedleft 0.\+0112756    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 0.\+047081   &\PBS\raggedleft 0.\+042215   &\PBS\raggedleft 0.\+034251    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 0.\+015694   &\PBS\raggedleft 0.\+014072   &\PBS\raggedleft 0.\+011417   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md64}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md64}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md65}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md65}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md66}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md66}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md67}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md67}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md68}{}\doxysubsubsection{\texorpdfstring{100000 Studentu analize}{100000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md68}
+Viso faile yra 14 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+134149   &\PBS\raggedleft 0.\+136899   &\PBS\raggedleft 0.\+113251    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+133631   &\PBS\raggedleft 0.\+142888   &\PBS\raggedleft 0.\+112049    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+129876   &\PBS\raggedleft 0.\+131859   &\PBS\raggedleft 0.\+121555    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 0.\+397656   &\PBS\raggedleft 0.\+411647   &\PBS\raggedleft 0.\+346855    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 0.\+132552   &\PBS\raggedleft 0.\+137216   &\PBS\raggedleft 0.\+115618   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md69}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md69}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md70}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md70}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md71}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md71}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md72}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md72}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md73}{}\doxysubsubsection{\texorpdfstring{1000000 Studentu analize}{1000000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md73}
+Viso faile yra 19 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 1.\+5492   &\PBS\raggedleft 1.\+55088   &\PBS\raggedleft 1.\+45731    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 1.\+51583   &\PBS\raggedleft 1.\+61241   &\PBS\raggedleft 1.\+30246    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 1.\+49225   &\PBS\raggedleft 1.\+49797   &\PBS\raggedleft 1.\+39939    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 4.\+557273   &\PBS\raggedleft 4.\+661263   &\PBS\raggedleft 4.\+159162    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 1.\+519091   &\PBS\raggedleft 1.\+553754   &\PBS\raggedleft 1.\+386387   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md74}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md74}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md75}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md75}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md76}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md76}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md77}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md77}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md78}{}\doxysubsubsection{\texorpdfstring{10000000 Studentu analize}{10000000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md78}
+Viso faile yra 19 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 15.\+166   &\PBS\raggedleft 12.\+4339   &\PBS\raggedleft 12.\+5972    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 14.\+1786   &\PBS\raggedleft 13.\+1281   &\PBS\raggedleft 11.\+9944    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 13.\+9391   &\PBS\raggedleft 13.\+1281   &\PBS\raggedleft 11.\+968    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 43.\+283757   &\PBS\raggedleft 39.\+586256   &\PBS\raggedleft 36.\+559604    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 14.\+427919   &\PBS\raggedleft 13.\+195419   &\PBS\raggedleft 12.\+186535   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md79}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md79}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md80}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md80}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md81}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md81}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md82}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md82}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md83}{}\doxysubsection{\texorpdfstring{2 strategija}{2 strategija}}\label{md__r_e_a_d_m_e_autotoc_md83}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md84}{}\doxysubsubsection{\texorpdfstring{1000 Studentu analize}{1000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md84}
+Viso faile yra 18 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+0020277   &\PBS\raggedleft 0.\+0016194   &\PBS\raggedleft 0.\+0018491    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0019987   &\PBS\raggedleft 0.\+0010802   &\PBS\raggedleft 0.\+0020192    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+0020458   &\PBS\raggedleft 0.\+0011127   &\PBS\raggedleft 0.\+0019972    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 0.\+006072   &\PBS\raggedleft 0.\+003812   &\PBS\raggedleft 0.\+005866    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 0.\+002024   &\PBS\raggedleft 0.\+001271   &\PBS\raggedleft 0.\+001955   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md85}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md85}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md86}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md86}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md87}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md87}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md88}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md88}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md89}{}\doxysubsubsection{\texorpdfstring{10000 Studentu analize}{10000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md89}
+Viso faile yra 18 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+0836527   &\PBS\raggedleft 0.\+0112158   &\PBS\raggedleft 0.\+0241349    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0217737   &\PBS\raggedleft 0.\+0136404   &\PBS\raggedleft 0.\+023094    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+0217998   &\PBS\raggedleft 0.\+0179673   &\PBS\raggedleft 0.\+0218672    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 0.\+127226   &\PBS\raggedleft 0.\+042824   &\PBS\raggedleft 0.\+069096    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 0.\+042409   &\PBS\raggedleft 0.\+014275   &\PBS\raggedleft 0.\+023032   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md90}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md90}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md91}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md91}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md92}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md92}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md93}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md93}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md94}{}\doxysubsubsection{\texorpdfstring{100000 Studentu analize}{100000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md94}
+Viso faile yra 14 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+30975   &\PBS\raggedleft 0.\+177184   &\PBS\raggedleft 0.\+280622    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+260698   &\PBS\raggedleft 0.\+188116   &\PBS\raggedleft 0.\+28941    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+251467   &\PBS\raggedleft 0.\+181947   &\PBS\raggedleft 0.\+294386    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 0.\+821915   &\PBS\raggedleft 0.\+547246   &\PBS\raggedleft 0.\+864418    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 0.\+273972   &\PBS\raggedleft 0.\+182415   &\PBS\raggedleft 0.\+288139   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md95}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md95}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md96}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md96}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md97}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md97}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md98}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md98}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md99}{}\doxysubsubsection{\texorpdfstring{1000000 Studentu analize}{1000000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md99}
+Viso faile yra 19 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 3.\+25533   &\PBS\raggedleft 2.\+65689   &\PBS\raggedleft 3.\+86107    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 3.\+19483   &\PBS\raggedleft 2.\+59375   &\PBS\raggedleft 3.\+61851    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 3.\+22155   &\PBS\raggedleft 2.\+47487   &\PBS\raggedleft 3.\+83965    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 9.\+671704   &\PBS\raggedleft 7.\+725517   &\PBS\raggedleft 11.\+319226    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 3.\+223901   &\PBS\raggedleft 2.\+575172   &\PBS\raggedleft 3.\+773075   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md100}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md100}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md101}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md101}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md102}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md102}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md103}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md103}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md104}{}\doxysubsubsection{\texorpdfstring{10000000 Studentu analize}{10000000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md104}
+Viso faile yra 19 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 25.\+9085   &\PBS\raggedleft 26.\+6098   &\PBS\raggedleft 29.\+7575    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 26.\+4085   &\PBS\raggedleft 22.\+6966   &\PBS\raggedleft 29.\+5761    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 29.\+7513   &\PBS\raggedleft 23.\+138   &\PBS\raggedleft 30.\+6643    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 82.\+068295   &\PBS\raggedleft 72.\+444385   &\PBS\raggedleft 89.\+997919    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 27.\+356098   &\PBS\raggedleft 24.\+148128   &\PBS\raggedleft 29.\+999306   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md105}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md105}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md106}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md106}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md107}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md107}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md108}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md108}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md109}{}\doxysubsection{\texorpdfstring{3 strategija}{3 strategija}}\label{md__r_e_a_d_m_e_autotoc_md109}
+Pagal 1 strategija naudojant std\+::stable\+\_\+partition\hypertarget{md__r_e_a_d_m_e_autotoc_md110}{}\doxysubsubsection{\texorpdfstring{1000 Studentu analize}{1000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md110}
+Viso faile yra 18 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+001565   &\PBS\raggedleft 0.\+0017377   &\PBS\raggedleft 0.\+0019046    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0017442   &\PBS\raggedleft 0.\+0027647   &\PBS\raggedleft 0.\+0019809    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+0017182   &\PBS\raggedleft 0.\+0017408   &\PBS\raggedleft 0.\+0021929    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 0.\+005027   &\PBS\raggedleft 0.\+006243   &\PBS\raggedleft 0.\+006078    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 0.\+001676   &\PBS\raggedleft 0.\+002081   &\PBS\raggedleft 0.\+002026   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md111}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md111}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md112}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md112}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md113}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md113}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md114}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md114}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md115}{}\doxysubsubsection{\texorpdfstring{10000 Studentu analize}{10000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md115}
+Viso faile yra 18 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+0090895   &\PBS\raggedleft 0.\+0222504   &\PBS\raggedleft 0.\+0195486    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0147448   &\PBS\raggedleft 0.\+021207   &\PBS\raggedleft 0.\+0163617    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+0151281   &\PBS\raggedleft 0.\+0176257   &\PBS\raggedleft 0.\+0240077    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 0.\+038962   &\PBS\raggedleft 0.\+4521997   &\PBS\raggedleft 0.\+059918    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 0.\+012987   &\PBS\raggedleft 0.\+1507332   &\PBS\raggedleft 0.\+019973   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md116}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md116}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md117}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md117}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md118}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md118}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md119}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md119}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md120}{}\doxysubsubsection{\texorpdfstring{100000 Studentu analize}{100000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md120}
+Viso faile yra 14 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+101376   &\PBS\raggedleft 0.\+10475   &\PBS\raggedleft 0.\+122028    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+0868336   &\PBS\raggedleft 0.\+103708   &\PBS\raggedleft 0.\+122189    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+0868577   &\PBS\raggedleft 0.\+10367   &\PBS\raggedleft 0.\+126421    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 0.\+275067   &\PBS\raggedleft 0.\+312128   &\PBS\raggedleft 0.\+370638    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 0.\+091689   &\PBS\raggedleft 0.\+104043   &\PBS\raggedleft 0.\+123546   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md121}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md121}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md122}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md122}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md123}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md123}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md124}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md124}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md125}{}\doxysubsubsection{\texorpdfstring{1000000 Studentu analize}{1000000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md125}
+Viso faile yra 19 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 0.\+962317   &\PBS\raggedleft 1.\+11344   &\PBS\raggedleft 1.\+32951    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 0.\+967044   &\PBS\raggedleft 1.\+11441   &\PBS\raggedleft 1.\+31631    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 0.\+971096   &\PBS\raggedleft 1.\+12013   &\PBS\raggedleft 1.\+29266    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 2.\+900457   &\PBS\raggedleft 3.\+347979   &\PBS\raggedleft 3.\+938470    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 0.\+966819   &\PBS\raggedleft 1.\+115993   &\PBS\raggedleft 1.\+312823   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md126}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md126}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md127}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md127}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md128}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md128}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md129}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md129}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md130}{}\doxysubsubsection{\texorpdfstring{10000000 Studentu analize}{10000000 Studentu analize}}\label{md__r_e_a_d_m_e_autotoc_md130}
+Viso faile yra 19 namų darbų pažymių
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ List   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Deque    }\\\cline{1-4}
+\endhead
+1 testas   &\PBS\raggedleft 11.\+3622   &\PBS\raggedleft 12.\+7829   &\PBS\raggedleft 15.\+1868    \\\cline{1-4}
+2 testas   &\PBS\raggedleft 11.\+2361   &\PBS\raggedleft 16.\+5202   &\PBS\raggedleft 16.\+1749    \\\cline{1-4}
+3 testas   &\PBS\raggedleft 11.\+024   &\PBS\raggedleft 13.\+9905   &\PBS\raggedleft 17.\+4642    \\\cline{1-4}
+Bendras laikas   &\PBS\raggedleft 33.\+622268   &\PBS\raggedleft 43.\+293562   &\PBS\raggedleft 48.\+825895    \\\cline{1-4}
+Vidutinis laikas   &\PBS\raggedleft 11.\+207423   &\PBS\raggedleft 14.\+431187   &\PBS\raggedleft 16.\+275298   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md131}{}\doxysubsubsection{\texorpdfstring{Nuotraukos}{Nuotraukos}}\label{md__r_e_a_d_m_e_autotoc_md131}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md132}{}\doxysubsubsubsection{\texorpdfstring{Vector}{Vector}}\label{md__r_e_a_d_m_e_autotoc_md132}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md133}{}\doxysubsubsubsection{\texorpdfstring{List}{List}}\label{md__r_e_a_d_m_e_autotoc_md133}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md134}{}\doxysubsubsubsection{\texorpdfstring{Deque}{Deque}}\label{md__r_e_a_d_m_e_autotoc_md134}
+  \hypertarget{md__r_e_a_d_m_e_autotoc_md135}{}\doxysection{\texorpdfstring{5 failų kūrimas}{5 failų kūrimas}}\label{md__r_e_a_d_m_e_autotoc_md135}
+ 

@@ -1,4 +1,4 @@
-# Antra versija
+# Trecia versija
 
 # 💻 Kompiuterio charakteristikos
 
