@@ -117,7 +117,7 @@ Visi testai praejo sekmingai.
 
 # v3.0 versija
 
-Sukurta nuosava vektoriaus klase, atlikti talpos ir greicio testati, sukurtas setup failas.
+Sukurta nuosava vektoriaus klase, atlikti talpos ir greicio testai, vidutinis programos veikimo laikas su std::vector ir mano vektoriaus klase, sukurtas setup.exe failas.
 
 # v3.0 versijos testavimas
 
