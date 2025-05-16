@@ -54,7 +54,7 @@ public:
 			std::swap(avail, other.avail);
 			std::swap(limit, other.limit);
 		}
-		return *this;
+		// return *this;
 	}
 
 	iterator begin() { return dat; }
