@@ -1,8 +1,10 @@
 #include "../santrauka.h"
 #include "funkcijos.h"
+#include "vector.h"
 
 int main()
 {
+	int choise;
 	vector<Studentas> studentai;
 	vector<string> sugeneruoti_failai;
 	int pasirinkimas = 0;
@@ -16,8 +18,8 @@ int main()
 		pasirinkimas = Meniu();
 		if (pasirinkimas == 5)
 		{
+			spartosTestas();
 			pabaiga(pasirinkimas, generuoti, pap_rusiavimas, kaip_surusiuoti);
-			break;
 		}
 		else
 		{

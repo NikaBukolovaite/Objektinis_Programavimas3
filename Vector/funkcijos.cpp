@@ -1,4 +1,5 @@
 #include "funkcijos.h"
+#include "vector.h"
 vector<std::chrono::duration<double>> testuLaikai;
 vector<std::chrono::duration<double>> kurimoLaikai;
 vector<std::chrono::duration<double>> rusiavimoLaikai;
@@ -417,6 +418,9 @@ void pabaiga(int pasirinkimas, int generuoti, int pasirinkimas_rusiavimui, int k
 	{
 		cout << "Programa baigta." << endl;
 	}
+	cout << "Paspausk Enter, kad uzdaryti programa." << endl;
+	std::cin.ignore();
+	std::cin.get();
 }
 
 bool ivestiStudenta(Studentas &laikinas)
@@ -782,7 +786,7 @@ int papildomas_rusiavimas()
 
 int pagal_ka_rusiuoti_studentus_i_failus(vector<Studentas> &studentai, int skaiciavimo_budas)
 {
-	std::vector<Studentas> vargsiukai;
+	vector<Studentas> vargsiukai;
 	int rusiavimo_budas = 0;
 
 	if (skaiciavimo_budas == 3)
@@ -813,7 +817,7 @@ int pagal_ka_rusiuoti_studentus_i_failus(vector<Studentas> &studentai, int skaic
 
 void studentu_rusiavimas_3strategija(vector<Studentas> &studentai, int skaiciavimo_budas, int kaip_surusiuoti, int rusiavimo_budas)
 {
-	std::vector<Studentas> kietekai, vargsiukai;
+	vector<Studentas> kietekai, vargsiukai;
 
 	auto start = std::chrono::high_resolution_clock::now();
 	if (skaiciavimo_budas == 1)
@@ -973,3 +977,56 @@ void failas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_b
 	output(failas, studentai, skaiciavimo_budas, 2);
 	failas.close();
 }
+
+void spartosTestas()
+{
+	unsigned int sizes[] = {10000, 100000, 1000000, 10000000, 100000000};
+
+	cout << "=== std::vector spartos testas ===" << endl;
+	for (unsigned int size : sizes)
+	{
+		int perskirstymai = 0;
+		vector<int> v1;
+		auto start = high_resolution_clock::now();
+
+		for (unsigned int i = 0; i < size; ++i)
+		{
+			v1.push_back(i);
+			if (v1.capacity() == v1.size())
+				++perskirstymai;
+		}
+
+		auto end = high_resolution_clock::now();
+		duration<double> trukme = end - start;
+
+		cout << "std::vector[" << size << "] - laikas: " << trukme.count() << " s, perskirstymai: " << perskirstymai << endl;
+	}
+
+	cout << "\n=== Tavo Vector spartos testas ===" << endl;
+	for (unsigned int size : sizes)
+	{
+		int perskirstymai = 0;
+		vector<int> v2;
+		auto start = high_resolution_clock::now();
+
+		for (unsigned int i = 0; i < size; ++i)
+		{
+			v2.push_back(i);
+			if (v2.capacity() == v2.size())
+				++perskirstymai;
+		}
+
+		auto end = high_resolution_clock::now();
+		duration<double> trukme = end - start;
+
+		cout << "Vector[" << size << "] - laikas: " << trukme.count() << " s, perskirstymai: " << perskirstymai << endl;
+	}
+}
+
+// int ar_paleisti_programa()
+// {
+// 	int choise;
+// 	cout << "Ar paleisti programa?";
+// 	cin >> choise;
+// 	return choise;
+// }

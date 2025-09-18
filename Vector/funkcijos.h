@@ -2,6 +2,7 @@
 #define FUNCTIONS_H
 #include "../santrauka.h"
 #include "studentas.h"
+#include "vector.h"
 
 const string aplankalo_pavadinimas = "NuskaitymoFailai";
 extern vector<std::chrono::duration<double>> testuLaikai;
@@ -45,5 +46,7 @@ void output(ostream &out, vector<Studentas> studentai, int skaiciavimo_budas, in
 void rusiavimoIf(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
 void terminalas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
 void failas(vector<Studentas> &studentai, int kaip_surusiuoti, int skaiciavimo_budas);
+void spartosTestas();
+// int ar_paleisti_programa()
 
 #endif
